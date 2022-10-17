@@ -4,12 +4,13 @@ const userNotif = () => {
     let userNotif = {
         top: "",
         right: "",
-        html: "",
-        className: "",
+        message: "",
     }
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
         userNotif[Object.keys(userNotif)[i]] = prompt(`Please enter ${Object.keys(userNotif)[i]}`);
     }
+    let hasClass = confirm('Do you want add class to your message?');
+    if (hasClass === true) userNotif.className = 'animation';
     return userNotif
 }
 // set specefic information that get from user
@@ -22,19 +23,8 @@ const showNotification = () => {
     right: ${notif.right}px;
     background-color : rgb(175 175 193);
     padding:50px;
-    margin:0;
     `
-    notification.innerHTML = `${notif.html}`
-    notification.className = `${notif.className}`
+    notification.innerHTML = `${notif.message}`
+    if (notif.className !== undefined) notification.className = `${notif.className}`
 }
 showNotification();
-
-// adding excessiv style to body
-document.body.style.cssText = `
-margin:0;
-padding:0;
-height: 100vh;
-font-family: Arial;
-font-size:30px;
-background-color : rgb(83 83 95);
-`
