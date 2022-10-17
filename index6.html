@@ -36,7 +36,7 @@
                         <span>landscape</span>
                     </div>
                     <h3>LOG IN</h3>
-                    <form action="">
+                    <form action="#" id="login-form">
                         <div class="form-item">
                             <div class="material-icons" id="person">
                                 <span>person</span>
@@ -51,12 +51,12 @@
                             <input type="password" placeholder="Password">
                             <div class="underline"></div>
                         </div>
-                        <div class="checkbox">
-                            <input type="checkbox" id="remember">
-                            <label>Remember me</label>
-                        </div>
+                        <label class="check-box">Remember me
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
                     </form>
-                    <button class="btn-login">Login</button>
+                    <button class="btn-login" form="login-form">Login</button>
                     <button class="btn-forgot">Forgot Password?</button>
                 </div>
             </main>
