@@ -14,11 +14,13 @@ const counterStep = {
         return this;
     },
     read: function () {
-        console.log(this.step)
+        const pTag = document.createElement("p");
+        pTag.innerHTML = this.step;
+        const display = document.getElementById('display')
+        document.body.insertBefore(pTag, display)
         return this;
     },
-
 }
 
-counterStep.read().increase().increase().reset().increase().decrease().decrease().read();
+counterStep.read().increase().read().increase().reset().increase().decrease().decrease().read().reset().decrease().read().increase().read();
 
